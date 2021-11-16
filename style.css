@@ -58,7 +58,7 @@ a::before{
   transform-origin: center bottom;
 }
 a:hover:before{
-  background-color: #720c26;
+  background-color: #921332;
   transform: scaleX(1);
 }
 .long::before{
