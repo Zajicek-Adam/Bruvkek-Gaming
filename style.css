@@ -20,6 +20,7 @@ nav{
   justify-content: center;
   align-items: center;
   background-color: rgb(36, 36, 36);
+  z-index: 2;
   width: 100%;
   position: fixed;
   top: 0;
