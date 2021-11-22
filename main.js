@@ -70,5 +70,12 @@ function moveLeft() {
     checkActive();
 }
 function checkActive(){
+    img[0].style.opacity = "0";
+    img[1].style.opacity = "0";
+    img[2].style.opacity = "0";
+    img[3].style.opacity = "0";
+    img[4].style.opacity = "0";
+    img[5].style.opacity = "0";
+
     img[count].style.opacity = "1";
 }
