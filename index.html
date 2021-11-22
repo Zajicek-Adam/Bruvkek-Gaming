@@ -6,9 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="carousel.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap"
+        rel="stylesheet">
     <title>Document</title>
 </head>
 
@@ -26,14 +28,34 @@
         <button id="button">
             <div class="ripple">
                 <span id="circle">
-
                 </span>
             </div>
             Bruvkek
         </button>
     </main>
     <section>
-
+        <div class="carousel">
+            <div class="img-container">
+                <img class="img active" src="img/ashe.jpg" alt="">
+                <img class="img inactive" src="img/samira-splash.jpg" alt="">
+                <img class="img inactive" src="img/mf.jpg" alt="">
+                <img class="img inactive" src="img/xayah.jpg" alt="">
+                <img class="img inactive" src="img/kaisa.jpg" alt="">
+                <img class="img inactive" src="img/jhin.jpg" alt="">
+            </div>
+            <div class="description">
+                <h2 id="champ-name">Champion</h2>
+                <p id="chanp-description">Lorem ipsum dolor sit amet consectetur, adipisicing elit. In libero, explicabo
+                    quas similique repudiandae unde perspiciatis sunt nemo nulla, nostrum voluptates dolorem rem!
+                    Aspernatur eos explicabo similique pariatur ipsa dolor dolorem dolorum ullam, quibusdam, mollitia,
+                    deserunt placeat at illum distinctio! Voluptatem exercitationem fuga voluptatibus earum sunt
+                    reiciendis facilis similique iusto!</p>
+                    <div class="controls">
+                        <button id="prev" onclick="moveLeft()">⟵</button>
+                        <button id="next" onclick="moveRight()">⟶</button>
+                    </div>
+            </div>
+        </div>
     </section>
     <script src="main.js"></script>
 </body>

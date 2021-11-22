@@ -1,0 +1,35 @@
+.carousel, .img-container, .description, .controls, .controls button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.carousel{
+    width: 90%;
+}
+.carousel > div{
+    margin: 1em;
+}
+.img-container{
+    width: 500px;
+    overflow: hidden;
+    justify-content: flex-start;
+}
+.img-container img{
+    width: 500px;
+    transition: all 600ms ease;
+    background-color: black;
+}
+.description{
+    flex-direction: column;
+    max-width: 40em;
+}
+.controls button{
+    font-size: 2.5em;
+    height: 20px;
+    width: 50px;
+    margin: 0.25em;
+}
+.inactive{
+    transition: all 600ms ease;
+    opacity: 0;
+}
