@@ -20,7 +20,7 @@ nav{
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgb(36, 36, 36);
+  background-color: rgb(29, 29, 29);
   z-index: 2;
   width: 100%;
   position: fixed;
@@ -88,6 +88,11 @@ button{
     padding: 0.5em 1em;
     text-transform: uppercase;
     overflow: hidden;
+}
+.ripple{
+  margin: 0;
+  width: 0;
+  height: 0;
 }
 h3{
   all: unset;

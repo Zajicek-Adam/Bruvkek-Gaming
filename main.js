@@ -4,7 +4,23 @@ let bruvkek = document.getElementById("bruvkek");
 let bruvkekheading = document.getElementById("bruvkek-heading");
 let section = document.getElementById("section");
 let rectangle;
+let mediaQueryMobile = window.matchMedia("(max-width: 600px)");
+let translateAmount = 500;
 let active = false;
+
+function handleResponsive(x){
+    if(x.matches){
+        translateAmount = 300;
+    }
+    else{
+        translateAmount = 500;
+    }
+}
+handleResponsive(mediaQueryMobile);
+//mediaQueryMobile.addEventListener(handleResponsive);
+document.addEventListener("resize", e => {
+    handleResponsive(mediaQueryMobile);
+})
 
 button.addEventListener("click", (e) => {
     setTimeout(function () {
@@ -67,21 +83,21 @@ const buttonNext = document.getElementById("next");
 function moveRight() {
     if (count < 5) {
         console.log(img[0]);
-        img[0].style.transform += "translate(-500px)";
-        img[1].style.transform += "translate(-500px)";
-        img[2].style.transform += "translate(-500px)";
-        img[3].style.transform += "translate(-500px)";
-        img[4].style.transform += "translate(-500px)";
-        img[5].style.transform += "translate(-500px)";
+        img[0].style.transform += `translate(-${translateAmount}px)`;
+        img[1].style.transform += `translate(-${translateAmount}px)`;
+        img[2].style.transform += `translate(-${translateAmount}px)`;
+        img[3].style.transform += `translate(-${translateAmount}px)`;
+        img[4].style.transform += `translate(-${translateAmount}px)`;
+        img[5].style.transform += `translate(-${translateAmount}px)`;
         count++;
     } else {
         count = 0;
-        img[0].style.transform = "translate(0px)";
-        img[1].style.transform = "translate(0px)";
-        img[2].style.transform = "translate(0px)";
-        img[3].style.transform = "translate(0px)";
-        img[4].style.transform = "translate(0px)";
-        img[5].style.transform = "translate(0px)";
+        img[0].style.transform = `translate(0px)`;
+        img[1].style.transform = `translate(0px)`;
+        img[2].style.transform = `translate(0px)`;
+        img[3].style.transform = `translate(0px)`;
+        img[4].style.transform = `translate(0px)`;
+        img[5].style.transform = `translate(0px)`;
     }
 
     checkActive();
@@ -89,20 +105,20 @@ function moveRight() {
 
 function moveLeft() {
     if (count == 0) {
-        img[0].style.transform = "translate(-2500px)";
-        img[1].style.transform = "translate(-2500px)";
-        img[2].style.transform = "translate(-2500px)";
-        img[3].style.transform = "translate(-2500px)";
-        img[4].style.transform = "translate(-2500px)";
-        img[5].style.transform = "translate(-2500px)";
+        img[0].style.transform = `translate(-${translateAmount*5}px)`;
+        img[1].style.transform = `translate(-${translateAmount*5}px)`;
+        img[2].style.transform = `translate(-${translateAmount*5}px)`;
+        img[3].style.transform = `translate(-${translateAmount*5}px)`;
+        img[4].style.transform = `translate(-${translateAmount*5}px)`;
+        img[5].style.transform = `translate(-${translateAmount*5}px)`;
         count = 5;
     } else {
-        img[0].style.transform += "translate(+500px)";
-        img[1].style.transform += "translate(+500px)";
-        img[2].style.transform += "translate(+500px)";
-        img[3].style.transform += "translate(+500px)";
-        img[4].style.transform += "translate(+500px)";
-        img[5].style.transform += "translate(+500px)";
+        img[0].style.transform += `translate(+${translateAmount}px)`;
+        img[1].style.transform += `translate(+${translateAmount}px)`;
+        img[2].style.transform += `translate(+${translateAmount}px)`;
+        img[3].style.transform += `translate(+${translateAmount}px)`;
+        img[4].style.transform += `translate(+${translateAmount}px)`;
+        img[5].style.transform += `translate(+${translateAmount}px)`;
         count--;
     }
     checkActive();

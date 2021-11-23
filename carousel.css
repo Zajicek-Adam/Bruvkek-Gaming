@@ -53,4 +53,50 @@ section, #button{
     .img-container{
         transform: rotateX(-15deg);
     }
+    #button{
+        position: absolute;
+        top: calc(50% + 50px);
+    }
+}
+@media only screen and (max-width: 1250px) and (min-width: 601px){
+    #button{
+        top: calc(50% + 120px);
+    }
+}
+@media only screen and (max-width: 600px){
+    h1{
+        font-size: 1.75em;
+    }
+    nav, nav > div{
+        flex-direction: column;
+    }
+    nav > div{
+        display: none;
+    }
+    a{
+        padding: 0;
+    }
+    .img-container{
+        width: 300px;
+    }
+    .img-container > img{
+        width: 300px;
+    }
+    main, section{
+        padding: 0.5em;
+    }
+    .carousel > div{
+        font-size: 0.85em;
+        margin: 0;
+    }
+    .controls{
+        width: 50%;
+        height: auto;
+    }
+    .description{
+        max-width: 70%;
+    }
+    .controls button{
+        padding: 0.25em 1em;
+    }
 }
