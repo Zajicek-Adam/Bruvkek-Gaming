@@ -1,13 +1,16 @@
 #burgir{
+    position: absolute;
+    top: 20px;
+    right: 20px;
     display: none;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     z-index: 10;
 }
-span{
+#burgir span{
     width: 40px;
-    transition: all 300ms ease-out;
+    transition: all 500ms ease;
     margin: 0.25em;
     position: relative;
     transform-origin: center;
@@ -15,9 +18,15 @@ span{
     border-radius: 10px;
     background-color: white;
 }
+/*#three{
+    transition: all 300ms ease;
+}*/
 @media only screen and (max-width: 600px){
     #burgir{
         display: flex;
-        margin-bottom: 1.25em;
+    }
+    nav > h2{
+        font-size: 1.25em;
+        margin: 1em;
     }
 }

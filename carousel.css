@@ -67,11 +67,12 @@ section, #button{
     h1{
         font-size: 1.75em;
     }
-    nav, nav > div{
+    nav{
         flex-direction: column;
     }
     nav > div{
         display: none;
+        flex-direction: column;
     }
     a{
         padding: 0;

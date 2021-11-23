@@ -3,7 +3,6 @@ let circle = document.getElementById("circle");
 let bruvkek = document.getElementById("bruvkek");
 let bruvkekheading = document.getElementById("bruvkek-heading");
 let section = document.getElementById("section");
-let rectangle;
 let mediaQueryMobile = window.matchMedia("(max-width: 600px)");
 let translateAmount = 500;
 let active = false;
@@ -22,7 +21,7 @@ document.addEventListener("resize", e => {
     handleResponsive(mediaQueryMobile);
 })
 
-button.addEventListener("click", (e) => {
+button.addEventListener("click", e => {
     setTimeout(function () {
         if (active == false) {
             section.style.transform = "translateY(-100%)";
@@ -39,19 +38,19 @@ button.addEventListener("click", (e) => {
             button.style.transform = "translateY(0px)";
             bruvkekheading.textContent = "BRUVKEK";
         }
-    }, 100);
+    }, 0);
     effect(e);
 });
 function effect(e) {
     let x = e.clientX;
     let y = e.clientY;
-    rectangle = button.getBoundingClientRect();
-    circle.style.left = x - rectangle.left + "px";
-    circle.style.top = y - rectangle.top + "px";
+    let rectangle = button.getBoundingClientRect();
+    circle.style.left = x - rectangle.left + 'px';
+    circle.style.top = y - rectangle.top + 'px';
     circle.classList.add("circle");
     setTimeout(function () {
         circle.classList.remove("circle");
-    }, 300);
+    }, 500);
 }
 
 //Carousel
