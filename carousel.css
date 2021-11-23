@@ -1,3 +1,9 @@
+section, #button{
+    transition: 400ms ease all;
+}
+#bruvkek{
+    transition: 500ms ease-in all;
+}
 .carousel, .img-container, .description, .controls, .controls button{
     display: flex;
     justify-content: center;
@@ -35,4 +41,13 @@
 .inactive{
     transition: all 600ms ease;
     opacity: 0;
+}
+@media only screen and (max-width: 1250px){
+    .carousel{
+        width: 100%;
+        flex-direction: column;
+    }
+    .img-container{
+        transform: rotateX(-15deg);
+    }
 }

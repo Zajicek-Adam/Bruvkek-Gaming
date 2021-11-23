@@ -1,8 +1,27 @@
 let button = document.getElementById("button");
 let circle = document.getElementById("circle");
+let bruvkek = document.getElementById("bruvkek");
+let bruvkekheading = document.getElementById("bruvkek-heading");
+let section = document.getElementById("section");
 let rectangle;
+let active = false;
 
 button.addEventListener("click", (e) => {
+    if (active == false) {
+        section.style.transform = "translateY(-100%)";
+        bruvkek.style.transform = "translateY(-750px)";
+        button.style.transform = "translateY(200px)";
+        active = true;
+        bruvkekheading.textContent = "UNBRUVKEK";
+        button.style.zIndex = "3";
+    }
+    else{
+        active = false; 
+        section.style.transform = "translateY(0px)";
+        bruvkek.style.transform = "translateY(0px)";
+        button.style.transform = "translateY(0px)";
+        bruvkekheading.textContent = "BRUVKEK";
+    }
     effect(e);
 });
 function effect(e) {
@@ -14,7 +33,7 @@ function effect(e) {
     circle.classList.add("circle");
     setTimeout(function () {
         circle.classList.remove("circle");
-    }, 500);
+    }, 300);
 }
 
 //Carousel
@@ -22,12 +41,12 @@ function effect(e) {
 
 
 let jsondata2 = '{ "champions" : [' +
-'{ "name":"Ashe" , "text": "Iceborn warmother of the Avarosan tribe, Ashe commands the most populous horde in the north. Stoic, intelligent, and idealistic, yet uncomfortable with her role as leader, she taps into the ancestral magics of her lineage to wield a bow of True Ice..." },' +
-'{ "name":"Samira" , "text": "Samira stares death in the eye with unyielding confidence, seeking thrill wherever she goes. After her Shuriman home was destroyed as a child, Samira found her true calling in Noxus, where she built a reputation as a stylish daredevil taking on..." },' +
-'{ "name":"Miss Fortune" , "text": "A Bilgewater captain famed for her looks but feared for her ruthlessness, Sarah Fortune paints a stark figure among the hardened criminals of the port city. As a child, she witnessed the reaver king Gangplank murder her family..." },' +
-'{ "name":"Xayah" , "text": "Deadly and precise, Xayah is a vastayan revolutionary waging a personal war to save her people. She uses her speed, guile, and razor-sharp feather blades to cut down anyone who stands in her way. Xayah fights alongside her partner and lover, Rakan..." },' +
-'{ "name":"KaiSa" ,  "text": "To survive among predators, Kai’Sa became one. Stranded for years with no hope of rescue, Kai’Sa endured through sheer will and a symbiotic second skin adapted from a living Void creature..." },' +
-'{ "name":"Jhin" , "text": "Jhin is a meticulous criminal psychopath who believes murder is art. Once an Ionian prisoner, but freed by shadowy elements within Ionia’s ruling council, the serial killer now works as their cabal\'s assassin. Using his gun as his paintbrush..." } ]}'; 
+    '{ "name":"Ashe" , "text": "Iceborn warmother of the Avarosan tribe, Ashe commands the most populous horde in the north. Stoic, intelligent, and idealistic, yet uncomfortable with her role as leader, she taps into the ancestral magics of her lineage to wield a bow of True Ice..." },' +
+    '{ "name":"Samira" , "text": "Samira stares death in the eye with unyielding confidence, seeking thrill wherever she goes. After her Shuriman home was destroyed as a child, Samira found her true calling in Noxus, where she built a reputation as a stylish daredevil taking on..." },' +
+    '{ "name":"Miss Fortune" , "text": "A Bilgewater captain famed for her looks but feared for her ruthlessness, Sarah Fortune paints a stark figure among the hardened criminals of the port city. As a child, she witnessed the reaver king Gangplank murder her family..." },' +
+    '{ "name":"Xayah" , "text": "Deadly and precise, Xayah is a vastayan revolutionary waging a personal war to save her people. She uses her speed, guile, and razor-sharp feather blades to cut down anyone who stands in her way. Xayah fights alongside her partner and lover, Rakan..." },' +
+    '{ "name":"KaiSa" ,  "text": "To survive among predators, Kai’Sa became one. Stranded for years with no hope of rescue, Kai’Sa endured through sheer will and a symbiotic second skin adapted from a living Void creature..." },' +
+    '{ "name":"Jhin" , "text": "Jhin is a meticulous criminal psychopath who believes murder is art. Once an Ionian prisoner, but freed by shadowy elements within Ionia’s ruling council, the serial killer now works as their cabal\'s assassin. Using his gun as his paintbrush..." } ]}';
 
 const obj = JSON.parse(jsondata2);
 
