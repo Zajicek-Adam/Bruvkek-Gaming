@@ -95,17 +95,17 @@ h3{
 }
 .circle {
     position: absolute;
-    background-color: #544cbe;
+    background-color: #7a73dd;
     width: 100px;
     height: 100px;
     border-radius: 50%;
     transform: translate(-50%, -50%) scale(0);
-    animation: scale 0.85s ease-out;
+    animation: scale 0.35s ease-out;
   }
   button:active { border-style: none;}
   @keyframes scale {
     to   {
-      transform: translate(-50%, -50%) scale(5);
+      transform: translate(-50%, -50%) scale(7);
       opacity: 0;
     }
   }

@@ -7,21 +7,23 @@ let rectangle;
 let active = false;
 
 button.addEventListener("click", (e) => {
-    if (active == false) {
-        section.style.transform = "translateY(-100%)";
-        bruvkek.style.transform = "translateY(-750px)";
-        button.style.transform = "translateY(200px)";
-        active = true;
-        bruvkekheading.textContent = "UNBRUVKEK";
-        button.style.zIndex = "3";
-    }
-    else{
-        active = false; 
-        section.style.transform = "translateY(0px)";
-        bruvkek.style.transform = "translateY(0px)";
-        button.style.transform = "translateY(0px)";
-        bruvkekheading.textContent = "BRUVKEK";
-    }
+    setTimeout(function () {
+        if (active == false) {
+            section.style.transform = "translateY(-100%)";
+            bruvkek.style.transform = "translateY(-750px)";
+            button.style.transform = "translateY(200px)";
+            active = true;
+            bruvkekheading.textContent = "UNBRUVKEK";
+            button.style.zIndex = "3";
+        }
+        else{
+            active = false; 
+            section.style.transform = "translateY(0px)";
+            bruvkek.style.transform = "translateY(0px)";
+            button.style.transform = "translateY(0px)";
+            bruvkekheading.textContent = "BRUVKEK";
+        }
+    }, 100);
     effect(e);
 });
 function effect(e) {
