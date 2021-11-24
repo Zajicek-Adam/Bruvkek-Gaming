@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="styles/tech.css" rel="stylesheet">
+    <link href="styles/burgir.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap"
+        rel="stylesheet">
+    <title>Document</title>
+</head>
+
+<body>
+    <nav>
+        <h2>Bruvkek gaming</h2>
+        <div id="navDiv">
+            <a href="index.html">How we bruv</a>
+            <a href="bruvkek.html">Where we kek</a>
+            <a class="long" href="technology.html">About bruv-kek tech</a>
+        </div>
+    </nav>
+    <div id="burgir">
+        <span id="one"></span>
+        <span id="two"></span>
+        <span id="three"></span>
+    </div>
+    <div class="row">
+        <div class="column">
+            <img src="img/Jinx_2.jpg" onclick="openModal();currentSlide(1)" class="hover-shadow">
+        </div>
+        <div class="column">
+            <img src="img/jhin.jpg" onclick="openModal();currentSlide(2)" class="hover-shadow">
+        </div>
+        <div class="column">
+            <img src="img/kaisa.jpg" onclick="openModal();currentSlide(3)" class="hover-shadow">
+        </div>
+        <div class="column">
+            <img src="img/samira-splash.jpg" onclick="openModal();currentSlide(4)" class="hover-shadow">
+        </div>
+    </div>
+
+    <!-- The Modal/Lightbox -->
+    <div id="myModal" class="modal">
+        <span class="close cursor" onclick="closeModal()">&times;</span>
+        <div class="modal-content">
+
+            <div class="mySlides">
+                <div class="numbertext">1 / 4</div>
+                <img src="img/Jinx_2.jpg" style="width:100%">
+            </div>
+
+            <div class="mySlides">
+                <div class="numbertext">2 / 4</div>
+                <img src="img/jhin.jpg" style="width:100%">
+            </div>
+
+            <div class="mySlides">
+                <div class="numbertext">3 / 4</div>
+                <img src="img/kaisa.jpg" style="width:100%">
+            </div>
+
+            <div class="mySlides">
+                <div class="numbertext">4 / 4</div>
+                <img src="img/samira-splash.jpg" style="width:100%">
+            </div>
+
+            <!-- Next/previous controls -->
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+            <!-- Caption text -->
+            <div class="caption-container">
+                <p id="caption"></p>
+            </div>
+
+            <!-- Thumbnail image controls -->
+            <div class="column">
+                <img class="demo" src="img/Jinx_2.jpg" onclick="currentSlide(1)" alt="Jinx">
+            </div>
+
+            <div class="column">
+                <img class="demo" src="img/jhin.jpg"" onclick="currentSlide(2)" alt="Jhin">
+            </div>
+
+            <div class="column">
+                <img class="demo" src="img/kaisa.jpg" onclick="currentSlide(3)" alt="KaiSa">
+            </div>
+
+            <div class="column">
+                <img class="demo" src="img/samira-splash.jpg" onclick="currentSlide(4)" alt="Samira">
+            </div>
+        </div>
+    </div>
+    <section>
+        <h1>Age of Bruvkek</h1>
+        <p>We had the revolutionary idea to combine both very powerful "bruv" and "kek" into one, more powerful, more capable.</p>
+        <h1>The BRUVKEK technology</h1>
+    </section>
+    <script>
+        // Open the Modal
+        function openModal() {
+            document.getElementById("myModal").style.display = "block";
+        }
+
+        // Close the Modal
+        function closeModal() {
+            document.getElementById("myModal").style.display = "none";
+        }
+
+        var slideIndex = 1;
+        showSlides(slideIndex);
+
+        // Next/previous controls
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        // Thumbnail image controls
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("demo");
+            var captionText = document.getElementById("caption");
+            if (n > slides.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = slides.length }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+            captionText.innerHTML = dots[slideIndex - 1].alt;
+        }
+    </script>
+</body>
+
+</html>
