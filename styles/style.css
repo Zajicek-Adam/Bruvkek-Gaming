@@ -59,10 +59,6 @@ a::before{
   transform: scaleX(0);
   transform-origin: center bottom;
 }
-a:hover:before{
-  background-color: #419aff;
-  transform: scaleX(1);
-}
 .long::before{
   width: 175px;
 }
@@ -113,5 +109,16 @@ button:active { border-style: none;}
   to   {
     transform: translate(-50%, -50%) scale(5);
     opacity: 0;
+  }
+}
+@keyframes opacityDec{
+  to{
+    opacity: 0.5;
+  }
+}
+@media only screen and (min-width: 601px){
+  a:hover:before{
+    background-color: #419aff;
+    transform: scaleX(1);
   }
 }

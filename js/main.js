@@ -7,11 +7,11 @@ let mediaQueryMobile = window.matchMedia("(max-width: 600px)");
 let translateAmount = 500;
 let active = false;
 
-function handleResponsive(x){
-    if(x.matches){
+function handleResponsive(x) {
+    if (x.matches) {
         translateAmount = 300;
     }
-    else{
+    else {
         translateAmount = 500;
     }
 }
@@ -31,8 +31,8 @@ button.addEventListener("click", e => {
             bruvkekheading.textContent = "UNBRUVKEK";
             button.style.zIndex = "3";
         }
-        else{
-            active = false; 
+        else {
+            active = false;
             section.style.transform = "translateY(0px)";
             bruvkek.style.transform = "translateY(0px)";
             button.style.transform = "translateY(0px)";
@@ -62,7 +62,8 @@ let jsondata2 = '{ "champions" : [' +
     '{ "name":"Samira" , "text": "Samira stares death in the eye with unyielding confidence, seeking thrill wherever she goes. After her Shuriman home was destroyed as a child, Samira found her true calling in Noxus, where she built a reputation as a stylish daredevil taking on..." },' +
     '{ "name":"Miss Fortune" , "text": "A Bilgewater captain famed for her looks but feared for her ruthlessness, Sarah Fortune paints a stark figure among the hardened criminals of the port city. As a child, she witnessed the reaver king Gangplank murder her family..." },' +
     '{ "name":"Xayah" , "text": "Deadly and precise, Xayah is a vastayan revolutionary waging a personal war to save her people. She uses her speed, guile, and razor-sharp feather blades to cut down anyone who stands in her way. Xayah fights alongside her partner and lover, Rakan..." },' +
-    '{ "name":"KaiSa" ,  "text": "To survive among predators, Kai’Sa became one. Stranded for years with no hope of rescue, Kai’Sa endured through sheer will and a symbiotic second skin adapted from a living Void creature..." },' +
+    '{ "name":"Kai\'Sa" ,  "text": "To survive among predators, Kai’Sa became one. Stranded for years with no hope of rescue, Kai’Sa endured through sheer will and a symbiotic second skin adapted from a living Void creature..." },' +
+    '{ "name":"Jinx" ,  "text": "A manic and impulsive criminal from Zaun, Jinx lives to wreak havoc without care for the consequences. With an arsenal of deadly weapons, she unleashes the loudest blasts and brightest explosions to leave a trail of mayhem and panic in her wake." },' +
     '{ "name":"Jhin" , "text": "Jhin is a meticulous criminal psychopath who believes murder is art. Once an Ionian prisoner, but freed by shadowy elements within Ionia’s ruling council, the serial killer now works as their cabal\'s assassin. Using his gun as his paintbrush..." } ]}';
 
 const obj = JSON.parse(jsondata2);
@@ -79,24 +80,31 @@ img = document.getElementsByClassName("img"); //Array of all images
 const buttonPrev = document.getElementById("prev");
 const buttonNext = document.getElementById("next");
 
+buttonPrev.addEventListener("click", e => {
+    buttonPrev.style.animation = "opacityDec 300ms ease";
+    setTimeout(function(){
+        buttonPrev.style.animation = "";
+    }, 300)
+})
+
+buttonNext.addEventListener("click", e => {
+    buttonNext.style.animation = "opacityDec 300ms ease";
+    setTimeout(function(){
+        buttonNext.style.animation = "";
+    }, 300)
+})
+
 function moveRight() {
-    if (count < 5) {
-        console.log(img[0]);
-        img[0].style.transform += `translate(-${translateAmount}px)`;
-        img[1].style.transform += `translate(-${translateAmount}px)`;
-        img[2].style.transform += `translate(-${translateAmount}px)`;
-        img[3].style.transform += `translate(-${translateAmount}px)`;
-        img[4].style.transform += `translate(-${translateAmount}px)`;
-        img[5].style.transform += `translate(-${translateAmount}px)`;
+    if (count < img.length - 1) {
+        for (let index = 0; index < img.length; index++) {
+            img[index].style.transform += `translate(-${translateAmount}px)`;
+        }
         count++;
     } else {
         count = 0;
-        img[0].style.transform = `translate(0px)`;
-        img[1].style.transform = `translate(0px)`;
-        img[2].style.transform = `translate(0px)`;
-        img[3].style.transform = `translate(0px)`;
-        img[4].style.transform = `translate(0px)`;
-        img[5].style.transform = `translate(0px)`;
+        for (let index = 0; index < img.length; index++) {
+            img[index].style.transform = `translate(0px)`;
+        }
     }
 
     checkActive();
@@ -104,32 +112,23 @@ function moveRight() {
 
 function moveLeft() {
     if (count == 0) {
-        img[0].style.transform = `translate(-${translateAmount*5}px)`;
-        img[1].style.transform = `translate(-${translateAmount*5}px)`;
-        img[2].style.transform = `translate(-${translateAmount*5}px)`;
-        img[3].style.transform = `translate(-${translateAmount*5}px)`;
-        img[4].style.transform = `translate(-${translateAmount*5}px)`;
-        img[5].style.transform = `translate(-${translateAmount*5}px)`;
-        count = 5;
+        for (let index = 0; index < img.length; index++) {
+            img[index].style.transform = `translate(-${translateAmount * (img.length-1)}px)`;
+        }
+        count = img.length-1;
     } else {
-        img[0].style.transform += `translate(+${translateAmount}px)`;
-        img[1].style.transform += `translate(+${translateAmount}px)`;
-        img[2].style.transform += `translate(+${translateAmount}px)`;
-        img[3].style.transform += `translate(+${translateAmount}px)`;
-        img[4].style.transform += `translate(+${translateAmount}px)`;
-        img[5].style.transform += `translate(+${translateAmount}px)`;
+        for (let index = 0; index < img.length; index++) {
+            img[index].style.transform += `translate(+${translateAmount}px)`;
+        }
         count--;
     }
     checkActive();
 }
 
 function checkActive() {
-    img[0].style.opacity = "0";
-    img[1].style.opacity = "0";
-    img[2].style.opacity = "0";
-    img[3].style.opacity = "0";
-    img[4].style.opacity = "0";
-    img[5].style.opacity = "0";
+    for (let index = 0; index < img.length; index++) {
+        img[index].style.opacity = "0";
+    }
 
     img[count].style.opacity = "1";
 

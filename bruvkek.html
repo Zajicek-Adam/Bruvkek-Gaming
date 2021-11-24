@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/style_kek.css">
+    <link rel="stylesheet" href="styles/burgir.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://api.mapy.cz/loader.js"></script>
+    <script>Loader.load()</script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap"
+        rel="stylesheet">
+    <title>Bruvkek Gaming | Where we kek</title>
+</head>
+
+<body>
+    <nav>
+        <h2>Bruvkek gaming</h2>
+        <div id="navDiv">
+            <a href="index.html">How we bruv</a>
+            <a href="">Where we kek</a>
+            <a class="long" href="">About bruv-kek tech</a>
+        </div>
+    </nav>
+    <div id="burgir">
+        <span id="one"></span>
+        <span id="two"></span>
+        <span id="three"></span>
+    </div>
+    <main>
+        <h1>We kek as we please, we kek as nomads</h1>
+        <h3>However, this is the current kek location</h3>
+        <div>
+            <div id="mapa"></div>
+            <p>Try to catch us. But we kek really strong, and our willpower is unmatched. We do not condone any bruv
+                technologies either, be prepared to face both bruv and kek throughout the bruvkek.</p>
+        </div>
+    </main>
+    <section>
+        <h1>How many keks(incl. variations) we did in two month periods</h1>
+        <canvas id="myChart"></canvas>
+    </section>
+
+    <script type="text/javascript">
+        var stred = SMap.Coords.fromWGS84(15.4919439, 50.8450994);
+        var mapa = new SMap(JAK.gel("mapa"), stred, 10);
+        mapa.addDefaultLayer(SMap.DEF_BASE).enable();
+        mapa.addDefaultControls();
+    </script>
+    <script>
+        const ctx = document.getElementById('myChart').getContext('2d');
+        const myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Jan-Feb', 'Mar-Apr', 'May-Jun', 'Jul-Aug', 'Sep-Oct', 'Nov-Dec'],
+                datasets: [
+                {
+                    label: 'Bruv',
+                    data: [12,69,62,40,35,7],
+                    backgroundColor:
+                        'rgba(75, 192, 192, 0.2)',
+                    borderColor: 
+                        'rgba(75, 192, 192, 1)',
+                    borderWidth: 1.5
+                },
+                {
+                    label: 'Kek',
+                    data: [7,100,20,38,42,25],
+                    backgroundColor:
+                        'rgba(255, 99, 132, 0.2)',
+                    borderColor: 
+                        'rgba(255, 99, 132, 1)',
+                    borderWidth: 1.5
+                },
+                {
+                    label: 'Bruvkek',
+                    data: [20,2,96,45,65,45],
+                    backgroundColor:
+                        'rgba(54, 162, 235, 0.2)',
+                    borderColor: 
+                        'rgba(54, 162, 235, 1)',
+                    borderWidth: 1.5
+                }
+            ]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+        myChart.canvas.parentNode.style.height = '800px';
+        myChart.canvas.parentNode.style.width = '800px';
+    </script>
+    <script src="js/burgir.js"></script>
+</body>
+
+</html>

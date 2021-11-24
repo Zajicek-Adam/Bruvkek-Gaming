@@ -20,11 +20,12 @@ section, #button{
     width: 500px;
     overflow: hidden;
     justify-content: flex-start;
+    border-radius: 50px ;
     transform: rotateY(25deg);
-    box-shadow: 0px 0px 10px 1px black;
+    box-shadow: 0px 0px 30px -5px black;
 }
 .img-container:hover{
-    box-shadow: 5px 5px 300px -50px #419aff93;
+    box-shadow: 5px 5px 70px -50px #155daf93;
 }
 .img-container img{
     width: 500px;
@@ -61,43 +62,5 @@ section, #button{
 @media only screen and (max-width: 1250px) and (min-width: 601px){
     #button{
         top: calc(50% + 120px);
-    }
-}
-@media only screen and (max-width: 600px){
-    h1{
-        font-size: 1.75em;
-    }
-    nav{
-        flex-direction: column;
-    }
-    nav > div{
-        display: none;
-        flex-direction: column;
-    }
-    a{
-        padding: 0;
-    }
-    .img-container{
-        width: 300px;
-    }
-    .img-container > img{
-        width: 300px;
-    }
-    main, section{
-        padding: 0.5em;
-    }
-    .carousel > div{
-        font-size: 0.85em;
-        margin: 0;
-    }
-    .controls{
-        width: 50%;
-        height: auto;
-    }
-    .description{
-        max-width: 70%;
-    }
-    .controls button{
-        padding: 0.25em 1em;
     }
 }
