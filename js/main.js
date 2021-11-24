@@ -1,6 +1,7 @@
 let button = document.getElementById("button");
 let circle = document.getElementById("circle");
 let bruvkek = document.getElementById("bruvkek");
+let myChart = document.getElementById("myChart");
 let bruvkekheading = document.getElementById("bruvkek-heading");
 let section = document.getElementById("section");
 let mediaQueryMobile = window.matchMedia("(max-width: 600px)");
@@ -10,9 +11,17 @@ let active = false;
 function handleResponsive(x) {
     if (x.matches) {
         translateAmount = 300;
+        if(myChart != null){
+        myChart.style.height = '300px';
+        myChart.style.width = '300px';
+        }
     }
     else {
         translateAmount = 500;
+        if(myChart != null){
+            myChart.style.height = '800px';
+            myChart.style.width = '800px';
+            }
     }
 }
 handleResponsive(mediaQueryMobile);
