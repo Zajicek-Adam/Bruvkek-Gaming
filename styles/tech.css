@@ -44,7 +44,7 @@ h3{
   position: relative;
   top: -20px;
 }
-a{
+nav a{
   margin: 1em;
   display: flex;
   justify-content: center;
@@ -53,7 +53,7 @@ a{
   font-weight: 300;
   text-transform: uppercase;
 }
-a::before{
+nav a::before{
   content: " ";
   z-index: 3;
   position: absolute;
