@@ -37,7 +37,7 @@ button.addEventListener("click", e => {
             bruvkek.style.transform = "translateY(-750px)";
             button.style.transform = "translateY(200px)";
             active = true;
-            bruvkekheading.textContent = "UNBRUVKEK";
+            bruvkekheading.textContent = "HIDE";
             button.style.zIndex = "3";
         }
         else {
