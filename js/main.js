@@ -46,8 +46,8 @@ button.addEventListener("click", e => {
             section.style.transform = "translateY(0px)";
             bruvkek.style.transform = "translateY(0px)";
             button.style.transform = "translateY(0px)";
-            bruvkekheading.textContent = "BRUVKEK";
-            bruvkekheading.style.padding = "0;
+            bruvkekheading.textContent = "DISCOVER";
+            bruvkekheading.style.padding = "0";
         }
     }, 0);
     effect(e);
