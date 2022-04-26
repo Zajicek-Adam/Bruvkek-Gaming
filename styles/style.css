@@ -95,6 +95,9 @@ h3{
   all: unset;
   font-size: inherit;
 }
+p{
+  height: 120px;
+}
 button:active { border-style: none;}
 #circle.circle {
   position: absolute;
